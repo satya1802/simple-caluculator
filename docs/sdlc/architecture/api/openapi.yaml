@@ -2,6 +2,17 @@
 openapi: 3.1.0
 info:
   title: simple caluculator
-  version: architecture-v0
+  version: architecture-v1
   description: Designed API from the approved architecture (not extracted from code).
-paths: {}
+paths:
+  /health:
+    get:
+      summary: Liveness/readiness probe for the app server. Returns a simple OK status.
+        No business data.
+      description: Liveness/readiness probe for the app server. Returns a simple OK
+        status. No business data.
+      operationId: get_health
+      parameters: []
+      responses:
+        '200':
+          description: '{ "status": "ok" }'
